@@ -1,0 +1,31 @@
+[phases.setup]
+nixPkgs = [
+  "chromium",
+  "nss",
+  "nspr",
+  "atk",
+  "atk-bridge",
+  "cairo",
+  "cups",
+  "dbus",
+  "expat",
+  "fontconfig",
+  "freetype",
+  "glib",
+  "gtk3",
+  "libdrm",
+  "libxkbcommon",
+  "libxcomposite",
+  "libxdamage",
+  "libxext",
+  "libxfixes",
+  "libxrandr",
+  "pango",
+  "libgbm",
+  "libxshmfence",
+  "libx11"
+]
+
+[phases.chromium]
+dependsOn = ["setup"]
+cmds = ["playwright install --with-deps chromium"]
